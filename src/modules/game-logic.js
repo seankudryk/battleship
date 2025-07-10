@@ -1,10 +1,7 @@
 export class Ship {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-    
-    logXandY() {
-        console.log(this.x, this.y);
+    constructor(shipLength) {
+        this.shipLength = shipLength;
+        this.hitCount = 0;
+        this.isSunk = false;
     }
 }
