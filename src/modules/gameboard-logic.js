@@ -16,7 +16,6 @@ export class Gameboard {
         this.board = this.createBoard();
     };
     
-    
     getGameboard = () => {
         return this.board;
     };
