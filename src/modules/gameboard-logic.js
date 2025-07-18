@@ -31,7 +31,8 @@ export class Gameboard {
         let newShip = new Ship(shipLength);
 
         for (let i = 0; i < shipLength; i++) {
-            this.board[row][column] = new Ship(shipLength);
+            //will eventually have to change what this does, for the sake of test development, I am simply assinging the cell value here to !null
+            this.board[row][column] = newShip.shipName;
 
             if (this.shipHorizontal) {
                 column++;
@@ -42,6 +43,7 @@ export class Gameboard {
     };
     
     receiveAttack = (x, y) => {
-        return;
+        let currentGameboardState = this.board;
+        return currentGameboardState[y][x];
     };
 };

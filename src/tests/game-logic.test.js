@@ -1,4 +1,4 @@
-import { Ship } from "../modules/ship-logic"
+import { Ship } from "../modules/game-logic"
 
 test("check that ship length initializes properly on new Ship call", () => {
     let shipLength4 = new Ship(4);
