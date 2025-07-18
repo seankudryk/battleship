@@ -1,4 +1,4 @@
-import { Ship } from "./game-logic.js"
+import { Ship } from "./ship-logic.js"
 
 export class Gameboard {
     constructor() {
@@ -12,11 +12,36 @@ export class Gameboard {
             };
             return board;
         }
-
+        
         this.board = this.createBoard();
     };
-    
+
+    shipHorizontal = true;
+
     getGameboard = () => {
         return this.board;
+    };
+
+
+    switchShipRotation = () => {
+        return this.shipHorizontal = !this.shipHorizontal;
+    }
+
+    placeShip = (row, column, shipLength) => {
+        let newShip = new Ship(shipLength);
+
+        for (let i = 0; i < shipLength; i++) {
+            this.board[row][column] = new Ship(shipLength);
+
+            if (this.shipHorizontal) {
+                column++;
+            } else {
+                row++;
+            }
+        }
+    };
+    
+    receiveAttack = (x, y) => {
+        return;
     };
 };
