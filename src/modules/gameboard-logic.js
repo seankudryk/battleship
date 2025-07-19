@@ -22,18 +22,16 @@ export class Gameboard {
         return this.board;
     };
 
-
     switchShipRotation = () => {
         return this.shipHorizontal = !this.shipHorizontal;
     }
 
-    placeShip = (row, column, shipLength) => {
-        let newShip = new Ship(shipLength);
+    placeShip = (row, column, shipType) => {
+        if (shipType)
 
         for (let i = 0; i < shipLength; i++) {
             //will eventually have to change what this does, for the sake of test development, I am simply assinging the cell value here to !null
             this.board[row][column] = newShip.shipName;
-
             if (this.shipHorizontal) {
                 column++;
             } else {

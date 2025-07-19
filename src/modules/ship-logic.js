@@ -36,6 +36,4 @@ export class Ship {
         //
         //name: "Battleship"
         //length: 5
-
-
 };
