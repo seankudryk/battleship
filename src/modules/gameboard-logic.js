@@ -14,34 +14,37 @@ export class Gameboard {
         }
         
         this.board = this.createBoard();
-    };
+    }
 
     shipHorizontal = true;
 
     getGameboard = () => {
         return this.board;
-    };
+    }
 
     switchShipRotation = () => {
         return this.shipHorizontal = !this.shipHorizontal;
     }
 
     placeShip = (row, column, shipType) => {
-        if (shipType)
+        let newShip = new Ship(shipType);
 
-        for (let i = 0; i < shipLength; i++) {
-            //will eventually have to change what this does, for the sake of test development, I am simply assinging the cell value here to !null
-            this.board[row][column] = newShip.shipName;
-            if (this.shipHorizontal) {
-                column++;
-            } else {
-                row++;
+        if (shipType) {
+            for (let i = 0; i < shipLength; i++) {
+                //will eventually have to change what this does, for the sake of test development, I am simply assinging the cell value here to !null
+                this.board[row][column] = [newShip.shipName, newShip.shipLength];
+                if (this.shipHorizontal) {
+                    column++;
+                } else {
+                    row++;
+                }
             }
         }
-    };
+    }
+
     
     receiveAttack = (x, y) => {
         let currentGameboardState = this.board;
         return currentGameboardState[y][x];
-    };
+    }
 };

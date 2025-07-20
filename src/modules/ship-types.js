@@ -1,7 +1,7 @@
 export const shipTypes = {
-    Patrol: { name: "Patrol", length: 2 },
-    Destroyer: { name: "Destroyer", length: 3 },
-    Cruiser: { name: "Cruiser", length: 3 },
-    Battleship: { name: "Battleship", length: 4 },
-    Carrier: { name: "Carrier", length: 5 },
-}
+    patrol: { name: "Patrol", length: 2 },
+    destroyer: { name: "Destroyer", length: 3 },
+    cruiser: { name: "Cruiser", length: 3 },
+    battleship: { name: "Battleship", length: 4 },
+    carrier: { name: "Carrier", length: 5 }
+};
