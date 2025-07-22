@@ -3,12 +3,10 @@ import { Ship } from "./ship-logic.js"
 export class Gameboard {
     constructor() {
         this.createBoard = () => {
-            const createRow = new Array(10).fill(null);
-
             let board = [];
 
             for (let i = 0; i < 10; i++) {
-                board.push(createRow);
+                board.push(new Array(10).fill(null));
             };
             return board;
         }
@@ -29,22 +27,24 @@ export class Gameboard {
     placeShip = (row, column, shipType) => {
         let newShip = new Ship(shipType);
 
-        if (shipType) {
-            for (let i = 0; i < shipLength; i++) {
-                //will eventually have to change what this does, for the sake of test development, I am simply assinging the cell value here to !null
-                this.board[row][column] = [newShip.shipName, newShip.shipLength];
-                if (this.shipHorizontal) {
-                    column++;
-                } else {
-                    row++;
-                }
+        for (let i = 0; i < newShip.shipLength; i++) {
+            //will eventually have to change what this does, for the sake of test development, I am simply assinging the cell value here to !null
+            this.board[row][column] = newShip;
+            if (this.shipHorizontal) {
+                column++;
+            } else {
+                row++;
             }
         }
     }
 
-    
-    receiveAttack = (x, y) => {
-        let currentGameboardState = this.board;
-        return currentGameboardState[y][x];
+    receiveAttack = (row, column) => {
+        if (this.board[row][column] instanceof Ship) {
+            this.board[row][column].hit();
+        } else {
+            this.board[row][column] = "miss";
+        }
+
+        // console.log(this.getGameboard());
     }
 };
