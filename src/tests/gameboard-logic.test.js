@@ -10,7 +10,8 @@ describe("create gameboardArray reference for all test cases", () => {
     });
 
     test("check that placeShip(0, 0, shipTypes.patrol) is able to place a Patrol ship from shipTypes object at index [0][0] of the gameBoard array", () => {
-        expect(gameboardArray[0][0].shipName && gameboardArray[0][1].shipName).toBe("Patrol");
+        expect(gameboardArray[0][0].shipName).toBe("Patrol");
+        expect(gameboardArray[0][1].shipName).toBe("Patrol");
     });
 
     describe("test .receiveAttack functionality", () => {

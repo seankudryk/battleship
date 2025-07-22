@@ -44,7 +44,5 @@ export class Gameboard {
         } else {
             this.board[row][column] = "miss";
         }
-
-        // console.log(this.getGameboard());
     }
 };
