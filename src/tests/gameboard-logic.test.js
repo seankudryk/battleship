@@ -14,6 +14,14 @@ describe("create gameboardArray reference for all test cases", () => {
         expect(gameboardArray[0][1].shipName).toBe("Patrol");
     });
 
+    test("check that placeShip rejects placement of ships that will overflow the gameboard", () => {
+        const thisSouldReturnFalse = gameboard.placeShip(0, 10, shipTypes.cruiser);
+        const thisShouldAlsoReturnFalse = gameboard.placeShip(7, 0, shipTypes.carrier);
+
+        expect(thisSouldReturnFalse).toBeFalsy();
+        expect(thisShouldAlsoReturnFalse).toBeFalsy();
+    })
+
     describe("test .receiveAttack functionality", () => {
         test("receiveAttack(0, 0) returns 'Patrol'", () => {
             gameboard.receiveAttack(0, 0);
