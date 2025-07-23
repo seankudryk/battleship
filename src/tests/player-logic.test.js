@@ -22,8 +22,6 @@ describe("create new Player class object to test", () => {
     test("place shipType Battleship starting at row 4, column 0 on humanPlayer gameboard, and shipType Cruiser starting at row 0, column 0 on humanPlayer gameboard", () => {
         humanPlayerGameboard.placeShip(4, 0, shipTypes.battleship);
         computerPlayerGameboard.placeShip(0, 0, shipTypes.cruiser);
-        console.log(humanPlayerGameboard);
-        console.log(computerPlayerGameboard);
         expect(humanPlayerGameboard.board[4][0].shipName).toBe("Battleship");
         expect(computerPlayerGameboard.board[0][0].shipName).toBe("Cruiser");
     })

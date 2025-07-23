@@ -10,6 +10,6 @@ describe("testing for calling Patrol object", () => {
     })
     
     test("test instanceof", () => {
-        expect(patrolBoat instanceof Ship).toBeTruthy;
+        expect(patrolBoat instanceof Ship).toBeTruthy();
     });
 })

@@ -25,16 +25,15 @@ export class Gameboard {
     }
 
     placeShip = (row, column, shipType) => {
-        let newShip = new Ship(shipType);
+        let newShip = new Ship(shipType)
+
+        //refactor to ensure that placed ships don't overflow board, and return from the placeShip call if the ship can't be placed
+        //same as above, but ensure that spaces aren't occupied
 
         for (let i = 0; i < newShip.shipLength; i++) {
-            //will eventually have to change what this does, for the sake of test development, I am simply assinging the cell value here to !null
-            this.board[row][column] = newShip;
-            if (this.shipHorizontal) {
-                column++;
-            } else {
-                row++;
-            }
+            const rowValue = this.shipHorizontal ? row : row + i;
+            const columnValue = this.shipHorizontal ? column + i : column;
+            this.board[rowValue][columnValue] = newShip;
         }
     }
 
