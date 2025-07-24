@@ -20,7 +20,13 @@ describe("create gameboardArray reference for all test cases", () => {
 
         expect(thisSouldReturnFalse).toBeFalsy();
         expect(thisShouldAlsoReturnFalse).toBeFalsy();
-    })
+    });
+
+    test("check that placeShip rejects placement of ships in the same cell as another ship - rejects placement in any non-null cell", () => {
+        const thisShouldNotReturnTrue = gameboard.placeShip(0, 0, shipTypes.cruiser);
+
+        expect(thisShouldNotReturnTrue).toBeFalsy();
+    });
 
     describe("test .receiveAttack functionality", () => {
         test("receiveAttack(0, 0) returns 'Patrol'", () => {
