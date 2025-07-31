@@ -3,11 +3,13 @@ import { Gameboard } from "../modules/gameboard-logic"
 import { Ship } from "../modules/ship-logic"
 import { shipTypes } from "../modules/ship-types";
 
-describe("create new Player class object to test", () => {
+describe("create new Player class objects to test", () => {
     let humanPlayer;
     let computerPlayer;
+    let humanPlayerGameboard;
+    let computerPlayerGameboard;
 
-    beforeAll(() => {
+    beforeEach(() => {
         humanPlayer = new Player("human");
         computerPlayer = new Player("computer");
         humanPlayerGameboard = humanPlayer.getPlayerGameboard();
