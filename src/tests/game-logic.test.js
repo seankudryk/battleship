@@ -1,5 +1,7 @@
-describe("placeholder", () => {
-    test("nothing", () => {
-        console.log("Hello World, from game-logic.test.js!");
+import { createNewGame } from "../modules/game-logic";
+
+describe("test that createNewgame can be called succesufully", () => {
+    test("createNewGame return 1s", () => {
+
     })
-})
+});
