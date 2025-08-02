@@ -8,8 +8,8 @@ export class Player {
         this.isActivePlayer;
     }
 
-    setActivePlayer = (player) => {
-        this.activePlayer = player;
+    setActivePlayer = () => {
+        this.activePlayer = true;
     }
 
     changePlayer = () => {
