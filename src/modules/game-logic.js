@@ -4,7 +4,6 @@ let playerData = []
 
 export const startNewGame = () => {
     playerData = createPlayers("cpu");
-    
     return;
 }
 
