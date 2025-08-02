@@ -1,4 +1,4 @@
-import { startNewGame } from "../modules/game-logic"
+import { createPlayers } from "../modules/game-logic"
 
 describe("placeholder", () => {
     beforeEach(() => {

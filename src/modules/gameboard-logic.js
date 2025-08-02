@@ -14,6 +14,8 @@ export class Gameboard {
         this.board = this.createBoard();
     }
 
+    gameboardLength = 10;
+
     shipHorizontal = true;
 
     getGameboard = () => {
@@ -25,6 +27,7 @@ export class Gameboard {
     }
 
     placeShip = (row, column, shipType) => {
+<<<<<<< HEAD
         let newShip = new Ship(shipType)
 
         for (let i = 0; i < newShip.shipLength; i++) {
@@ -41,10 +44,24 @@ export class Gameboard {
                 return false;
             }
         }
+=======
+        let newShip = new Ship(shipType);
+>>>>>>> c1961df57ae6dbf6b2a5ea300e2359f76a97bf34
 
         for (let i = 0; i < newShip.shipLength; i++) {
             const rowValue = this.shipHorizontal ? row : row + i;
             const columnValue = this.shipHorizontal ? column + i : column;
+
+            if (rowValue >= this.gameboardLength || columnValue >= this.gameboardLength) {
+                console.log(`Invalid ship placement: ship exceeds board length`);
+                return false;
+            }
+
+            if (this.board[rowValue][columnValue] != null) {
+                console.log(`This space is already occupied by ${this.board[rowValue][columnValue]}`)
+                return false;
+            }
+
             this.board[rowValue][columnValue] = newShip;
         }
     }
