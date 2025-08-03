@@ -1,9 +1,11 @@
 import { Gameboard } from "./gameboard-logic"
+import { shipTypes } from "./ship-types"
 
 export class Player {
     constructor(playerType) {
         this.playerType = playerType;
-        this.activeShips = 5;
+        this.activeShips = [shipTypes.patrol, shipTypes.destroyer, shipTypes.cruiser, shipTypes.battleship, shipTypes.carrier];
+        this.activeShipCount = 5;
         this.playerGameboard = new Gameboard();
         this.isActivePlayer;
     }
